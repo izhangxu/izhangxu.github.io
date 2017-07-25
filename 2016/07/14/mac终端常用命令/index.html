@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
+<meta name="description" content="清屏1clear | command + L显示所有进程1ps -A杀死进程1kill [-9] 进程号查看被占用的80端口（lsof:list open files）1sudo lsof -i :80 | grep -i &quot;listen&quot;查看在运行的程序1ps aux | grep amoeba查找文件12find 路径 -name &apos;文件&apos;find / -name &apos;ljf&apos;操作apache1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mac终端常用命令">
 <meta property="og:url" content="https://izhangxu.github.io/2016/07/14/mac终端常用命令/index.html">
 <meta property="og:site_name" content="izhangxu的博客">
-<meta property="og:description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
+<meta property="og:description" content="清屏1clear | command + L显示所有进程1ps -A杀死进程1kill [-9] 进程号查看被占用的80端口（lsof:list open files）1sudo lsof -i :80 | grep -i &quot;listen&quot;查看在运行的程序1ps aux | grep amoeba查找文件12find 路径 -name &apos;文件&apos;find / -name &apos;ljf&apos;操作apache1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-25T07:26:56.000Z">
+<meta property="og:updated_time" content="2017-07-25T08:39:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac终端常用命令">
-<meta name="twitter:description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
+<meta name="twitter:description" content="清屏1clear | command + L显示所有进程1ps -A杀死进程1kill [-9] 进程号查看被占用的80端口（lsof:list open files）1sudo lsof -i :80 | grep -i &quot;listen&quot;查看在运行的程序1ps aux | grep amoeba查找文件12find 路径 -name &apos;文件&apos;find / -name &apos;ljf&apos;操作apache1">
 
 
 
@@ -344,14 +344,7 @@
       
 
       
-        <p>清屏</p>
-<p><pre class="lang:vim decode:true">clear | command + L</pre><br>显示所有进程</p>
-<p><pre class="lang:vim decode:true ">ps -A</pre><br>杀死进程</p>
-<p><pre class="lang:vim decode:true">kill [-9] 进程号</pre><br>查看被占用的80端口（lsof:list open files）</p>
-<p><pre class="lang:vim decode:true ">sudo lsof -i :80 | grep -i “listen”</pre><br>查看在运行的程序</p>
-<p><pre class="lang:vim decode:true">ps aux | grep amoeba</pre><br>查找文件</p>
-<p><pre class="lang:vim decode:true ">find 路径 -name ‘文件’<br>find / -name ‘ljf’</pre><br>操作apache</p>
-<p><pre class="lang:vim decode:true">重启apache：sudo /usr/sbin/apachectl restart<br>关闭apache：sudo /usr/sbin/apachectl stop<br>开启apache：sudo /usr/sbin/apachectl start</pre><br>&nbsp;</p>
+        <p>清屏<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clear | command + L</div></pre></td></tr></table></figure><br>显示所有进程<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -A</div></pre></td></tr></table></figure><br>杀死进程<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kill [-9] 进程号</div></pre></td></tr></table></figure><br>查看被占用的80端口（lsof:list open files）<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo lsof -i :80 | grep -i "listen"</div></pre></td></tr></table></figure><br>查看在运行的程序<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps aux | grep amoeba</div></pre></td></tr></table></figure><br>查找文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find 路径 -name '文件'</div><div class="line">find / -name 'ljf'</div></pre></td></tr></table></figure><br>操作apache<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 重启apache</div><div class="line">sudo /usr/sbin/apachectl restart</div><div class="line"><span class="meta">#</span> 关闭apache</div><div class="line">sudo /usr/sbin/apachectl stop</div><div class="line"><span class="meta">#</span> 开启apache</div><div class="line">sudo /usr/sbin/apachectl start</div></pre></td></tr></table></figure></p>
 
       
     </div>
