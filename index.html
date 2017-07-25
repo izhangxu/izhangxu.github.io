@@ -251,6 +251,501 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://izhangxu.github.io/2016/12/01/window.open被拦截的几种处理方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="izhangxu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/01/window.open被拦截的几种处理方法/" itemprop="url">
+                  window.open被拦截的几种处理方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T10:45:38+08:00">
+                2016-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。怎么处理这种被拦截的情况呢？</p>
+<p>替代方案：</p>
+<p>1、创建a标签代替</p>
+<pre class="lang:js decode:true">var a = document.createElement(‘a‘);
+a.setAttribute(‘href‘, url);
+a.setAttribute(‘target‘, ‘_blank‘);
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);</pre>
+2、构建form表单提交
+<pre class="lang:js decode:true">var oForm = document.createElement('form');
+oForm.action = 'http://www.fangjiadp.com/beijing/newhouse/index';(需要跳转的链接)
+oForm.target = '_blank';
+oForm.method = 'get';
+document.body.appendChild(oForm);
+oForm.submit();
+document.body.removeChild(oForm);</pre>
+window.open()防止被拦截：
+
+1、绑定事件执行window.open()不会被拦截
+<pre class="lang:js decode:true">document.body.addEventListener(‘click‘, function() {
+    window.open(‘//www.baidu.com‘, ‘_blank‘);
+});</pre>
+2、处理ajax回调中被拦截
+<pre class="lang:js decode:true">$('.open').on('click', function() {
+    var w = window.open();
+    $.ajax({
+        type: 'POST',
+        url: '/xxx',
+        dataType: 'json',
+        error: function() {
+            w.close();
+        },
+        success: function(res) {
+            w.location = res.url;
+        }
+    });
+});</pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://izhangxu.github.io/2016/09/15/JavaScript排序算法简单实现（快排、选择、冒泡）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="izhangxu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/15/JavaScript排序算法简单实现（快排、选择、冒泡）/" itemprop="url">
+                  JavaScript排序算法简单实现（快排、选择、冒泡）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-15T16:15:31+08:00">
+                2016-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用场景：给定一个数组进行排序。下面是简陋版的实现方法，了解思路。</p>
+<p>1、快速排序</p>
+<p>快速排序使用分治法，把一个大串儿分为两个小串儿分别排序，在两个小串中使用递归再分串排序，最后合并。</p>
+<p><pre class="lang:js decode:true">var arr = [2, -6, 8, 10, 20 - 3, -100, 203, 7, 9, 53];</pre></p>
+<p>function quickSort(array) {<br>    if (!array.length) {<br>        return array;<br>    }<br>        //1、选出基准<br>    var middleIndex = Math.floor(array.length / 2);<br>    var middleItem = array.splice(middleIndex, 1); </p>
+<pre><code>var left = [];
+var right = [];
+    //重新排序，比基准小的放在前，比基准大的放在后
+for (var i = 0; i &amp;lt; array.length; i++) {
+    if (array[i] &amp;lt; middleItem[0]) {
+        left.push(array[i]);
+    } else {
+        right.push(array[i]);
+    }
+}
+    //递归
+return quickSort(left).concat(middleItem, quickSort(right));
+</code></pre><p>}<br>console.log(quickSort(arr));<br>2、冒泡排序</p>
+<p>冒泡排序是每次比较数组中相邻的两个元素进行比较排序。需要进行两次循环，外层循环决定循环次数，里层循环每次找到最大的值往数组后面排。</p>
+<p><pre class="toolbar:1 show-lang:1 lang:js decode:true">var arr = [2, -6, 8, 10, 20 - 3, -100, 203, 7, 9, 53];</pre></p>
+<p>function bubbleSort(array) {<br>    for (var i = 0; i &lt; array.length - 1; i++) {<br>        for (var j = 0; j &lt; array.length - 1; j++) {<br>            if (array[j + 1] &lt; array[j]) {<br>                var temp;<br>                temp = array[j + 1];<br>                array[j + 1] = array[j];<br>                array[j] = temp;<br>            }<br>        }<br>    }<br>}<br>console.log(bubbleSort(arr));<br>3、选择排序</p>
+<p>每次循环拿出第一个元素和其他元素比较大小，对换位置。</p>
+<p><pre class="lang:js decode:true ">var arr = [2, -6, 8, 10, 20 - 3, -100, 203, 7, 9, 53];</pre></p>
+<p>function selectionSort(array) {<br>    var findMinIndex = function(array, start) {<br>        var iMin = array[start];<br>        var index = start;<br>        for (var i = start + 1; i &lt; array.length; i++) {<br>            if (array[i] &lt; iMin) {<br>                iMin = array[i];<br>                index = i;<br>            }<br>        }<br>        return index;<br>    };<br>    for (var j = 0; j &lt; array.length; j++) {<br>        var m = findMinIndex(array, j);<br>        var temp;<br>        temp = array[j];<br>        array[j] = array[m];<br>        array[m] = temp;<br>    }<br>    return array;<br>}<br>console.log(selectionSort(arr));<br>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://izhangxu.github.io/2016/07/14/mac终端常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="izhangxu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/14/mac终端常用命令/" itemprop="url">
+                  mac终端常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-14T16:58:33+08:00">
+                2016-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>清屏</p>
+<p><pre class="lang:vim decode:true">clear | command + L</pre><br>显示所有进程</p>
+<p><pre class="lang:vim decode:true ">ps -A</pre><br>杀死进程</p>
+<p><pre class="lang:vim decode:true">kill [-9] 进程号</pre><br>查看被占用的80端口（lsof:list open files）</p>
+<p><pre class="lang:vim decode:true ">sudo lsof -i :80 | grep -i “listen”</pre><br>查看在运行的程序</p>
+<p><pre class="lang:vim decode:true">ps aux | grep amoeba</pre><br>查找文件</p>
+<p><pre class="lang:vim decode:true ">find 路径 -name ‘文件’<br>find / -name ‘ljf’</pre><br>操作apache</p>
+<p><pre class="lang:vim decode:true">重启apache：sudo /usr/sbin/apachectl restart<br>关闭apache：sudo /usr/sbin/apachectl stop<br>开启apache：sudo /usr/sbin/apachectl start</pre><br>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://izhangxu.github.io/2015/04/03/JavaScript中对象的深度克隆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -610,7 +1105,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -621,7 +1116,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -632,7 +1127,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

@@ -87,16 +87,17 @@
 
 
 
-<meta name="description" content="izhangxu的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="izhangxu的博客">
-<meta property="og:url" content="https://izhangxu.github.io/tags/clone/index.html">
+<meta name="description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac终端常用命令">
+<meta property="og:url" content="https://izhangxu.github.io/2016/07/14/mac终端常用命令/index.html">
 <meta property="og:site_name" content="izhangxu的博客">
-<meta property="og:description" content="izhangxu的博客">
+<meta property="og:description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-25T07:26:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="izhangxu的博客">
-<meta name="twitter:description" content="izhangxu的博客">
+<meta name="twitter:title" content="mac终端常用命令">
+<meta name="twitter:description" content="清屏 clear | command + L显示所有进程 ps -A杀死进程 kill [-9] 进程号查看被占用的80端口（lsof:list open files） sudo lsof -i :80 | grep -i “listen”查看在运行的程序 ps aux | grep amoeba查找文件 find 路径 -name ‘文件’find / -name ‘ljf’操作apache 重">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://izhangxu.github.io/tags/clone/"/>
+  <link rel="canonical" href="https://izhangxu.github.io/2016/07/14/mac终端常用命令/"/>
 
 
 
 
 
-  <title> 标签: clone | izhangxu的博客 </title>
+  <title> mac终端常用命令 | izhangxu的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -155,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,46 +240,183 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        clone
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://izhangxu.github.io/2016/07/14/mac终端常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="izhangxu的博客">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mac终端常用命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-14T16:58:33+08:00">
+                2016-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>清屏</p>
+<p><pre class="lang:vim decode:true">clear | command + L</pre><br>显示所有进程</p>
+<p><pre class="lang:vim decode:true ">ps -A</pre><br>杀死进程</p>
+<p><pre class="lang:vim decode:true">kill [-9] 进程号</pre><br>查看被占用的80端口（lsof:list open files）</p>
+<p><pre class="lang:vim decode:true ">sudo lsof -i :80 | grep -i “listen”</pre><br>查看在运行的程序</p>
+<p><pre class="lang:vim decode:true">ps aux | grep amoeba</pre><br>查找文件</p>
+<p><pre class="lang:vim decode:true ">find 路径 -name ‘文件’<br>find / -name ‘ljf’</pre><br>操作apache</p>
+<p><pre class="lang:vim decode:true">重启apache：sudo /usr/sbin/apachectl restart<br>关闭apache：sudo /usr/sbin/apachectl stop<br>开启apache：sudo /usr/sbin/apachectl start</pre><br>&nbsp;</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2015/04/03/JavaScript中对象的深度克隆/" itemprop="url">
-              
-                <span itemprop="name">JavaScript中对象的深度克隆</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-04-03T15:12:37+08:00"
-              content="2015-04-03" >
-          04-03
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/03/JavaScript中对象的深度克隆/" rel="next" title="JavaScript中对象的深度克隆">
+                <i class="fa fa-chevron-left"></i> JavaScript中对象的深度克隆
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/15/JavaScript排序算法简单实现（快排、选择、冒泡）/" rel="prev" title="JavaScript排序算法简单实现（快排、选择、冒泡）">
+                JavaScript排序算法简单实现（快排、选择、冒泡） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -286,6 +424,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -482,6 +624,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
