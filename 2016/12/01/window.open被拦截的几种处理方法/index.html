@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。怎么处理这种被拦截的情况呢？ 替代方案： 1、创建a标签代替 var a = document.createElement(‘a‘); a.setAttribute(‘href‘,">
+<meta name="description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。下面有几种常见的方案： 替代方案： 1、创建a标签代替123456var a = document.createElement(&apos;a&apos;);a.setAttribute(&apos;href&apos;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="window.open被拦截的几种处理方法">
 <meta property="og:url" content="https://izhangxu.github.io/2016/12/01/window.open被拦截的几种处理方法/index.html">
 <meta property="og:site_name" content="izhangxu的博客">
-<meta property="og:description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。怎么处理这种被拦截的情况呢？ 替代方案： 1、创建a标签代替 var a = document.createElement(‘a‘); a.setAttribute(‘href‘,">
+<meta property="og:description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。下面有几种常见的方案： 替代方案： 1、创建a标签代替123456var a = document.createElement(&apos;a&apos;);a.setAttribute(&apos;href&apos;,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-25T07:32:31.000Z">
+<meta property="og:updated_time" content="2017-07-25T08:26:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.open被拦截的几种处理方法">
-<meta name="twitter:description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。怎么处理这种被拦截的情况呢？ 替代方案： 1、创建a标签代替 var a = document.createElement(‘a‘); a.setAttribute(‘href‘,">
+<meta name="twitter:description" content="window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。下面有几种常见的方案： 替代方案： 1、创建a标签代替123456var a = document.createElement(&apos;a&apos;);a.setAttribute(&apos;href&apos;,">
 
 
 
@@ -344,44 +344,12 @@
       
 
       
-        <p>window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。怎么处理这种被拦截的情况呢？</p>
+        <p>window对象是BOM的顶层(核心)对象，它的属性在众多浏览器中的兼容不大相同，我们常用的window.open()方法就在各个浏览器中表现不同，例如：点击按钮弹出新窗口的需求，在大多数高级浏览器都会拦截弹出的窗口。下面有几种常见的方案：</p>
 <p>替代方案：</p>
-<p>1、创建a标签代替</p>
-<pre class="lang:js decode:true">var a = document.createElement(‘a‘);
-a.setAttribute(‘href‘, url);
-a.setAttribute(‘target‘, ‘_blank‘);
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);</pre>
-2、构建form表单提交
-<pre class="lang:js decode:true">var oForm = document.createElement('form');
-oForm.action = 'http://www.fangjiadp.com/beijing/newhouse/index';(需要跳转的链接)
-oForm.target = '_blank';
-oForm.method = 'get';
-document.body.appendChild(oForm);
-oForm.submit();
-document.body.removeChild(oForm);</pre>
-window.open()防止被拦截：
+<p>1、创建a标签代替<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">a.setAttribute(<span class="string">'href'</span>, url);</div><div class="line">a.setAttribute(<span class="string">'target'</span>, <span class="string">'_blank'</span>);</div><div class="line"><span class="built_in">document</span>.body.appendChild(a);</div><div class="line">a.click();</div><div class="line"><span class="built_in">document</span>.body.removeChild(a);</div></pre></td></tr></table></figure><br>2、构建form表单提交<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oForm = <span class="built_in">document</span>.createElement(<span class="string">'form'</span>);</div><div class="line">oForm.action = <span class="string">'http://www.fangjiadp.com/beijing/newhouse/index'</span>;(需要跳转的链接)</div><div class="line">oForm.target = <span class="string">'_blank'</span>;</div><div class="line">oForm.method = <span class="string">'get'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(oForm);</div><div class="line">oForm.submit();</div><div class="line"><span class="built_in">document</span>.body.removeChild(oForm);</div></pre></td></tr></table></figure></p>
+<p>window.open()防止被拦截：</p>
+<p>1、绑定事件执行window.open()不会被拦截<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.open(<span class="string">'//www.baidu.com'</span>, <span class="string">'_blank'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>2、处理ajax回调中被拦截<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.open'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> w = <span class="built_in">window</span>.open();</div><div class="line">    $.ajax(&#123;</div><div class="line">        <span class="attr">type</span>: <span class="string">'POST'</span>,</div><div class="line">        <span class="attr">url</span>: <span class="string">'/xxx'</span>,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">'json'</span>,</div><div class="line">        <span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            w.close();</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">            w.location = res.url;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
-1、绑定事件执行window.open()不会被拦截
-<pre class="lang:js decode:true">document.body.addEventListener(‘click‘, function() {
-    window.open(‘//www.baidu.com‘, ‘_blank‘);
-});</pre>
-2、处理ajax回调中被拦截
-<pre class="lang:js decode:true">$('.open').on('click', function() {
-    var w = window.open();
-    $.ajax({
-        type: 'POST',
-        url: '/xxx',
-        dataType: 'json',
-        error: function() {
-            w.close();
-        },
-        success: function(res) {
-            w.location = res.url;
-        }
-    });
-});</pre>
       
     </div>
 
@@ -417,8 +385,8 @@ window.open()防止被拦截：
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/15/JavaScript排序算法简单实现（快排、选择、冒泡）/" rel="next" title="JavaScript排序算法简单实现（快排、选择、冒泡）">
-                <i class="fa fa-chevron-left"></i> JavaScript排序算法简单实现（快排、选择、冒泡）
+              <a href="/2016/09/15/JavaScript排序算法简单实现/" rel="next" title="JavaScript排序算法简单实现">
+                <i class="fa fa-chevron-left"></i> JavaScript排序算法简单实现
               </a>
             
           </div>
@@ -488,7 +456,7 @@ window.open()防止被拦截：
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
